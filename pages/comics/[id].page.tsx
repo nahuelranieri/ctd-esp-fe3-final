@@ -24,7 +24,7 @@ const ComicPage = ({ comic, characters }: Props) => {
   }, []);
 
   return (
-    <LayoutGeneral>
+    <>
       <Head>
         <title>{comic.title}</title>
         <meta name="description" content="Página de detalle de cómic" />
@@ -42,7 +42,7 @@ const ComicPage = ({ comic, characters }: Props) => {
         </Box>
         <CharactersGrid characters={characters} />
       </Box>
-    </LayoutGeneral>
+    </>
   );
 };
 

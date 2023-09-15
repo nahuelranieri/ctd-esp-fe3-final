@@ -37,7 +37,6 @@ const Index: NextPage<Props> = ({ comics, total }) => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
             <BodySingle title={"Comics"}>
                 <ComicPagination
                     page={page}

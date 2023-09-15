@@ -13,13 +13,13 @@ interface Props {
 
 const ComicDetails = ({ comic }: Props) => {
 
-//   const { setOrder } = useOrderContext();
+  const { setOrder } = useOrderContext();
 
-//   const handlePurchase = () => {
-//     setOrder((prevOrder) => {
-//       return { ...prevOrder, comic };
-//     });
-//   };
+  const handlePurchase = () => {
+    setOrder((prevOrder) => {
+      return { ...prevOrder, comic };
+    });
+  };
 
   return (
     <>
@@ -54,9 +54,9 @@ const ComicDetails = ({ comic }: Props) => {
         </Box>
         {comic.stock > 0 ? (
           <Link href={"/checkout"}>
-            {/* <Button variant="contained" onClick={handlePurchase}>
+            <Button variant="contained" onClick={handlePurchase}>
               Comprar
-            </Button> */}
+            </Button>
           </Link>
         ) : (
           <Button disabled>Sin stock disponible</Button>
