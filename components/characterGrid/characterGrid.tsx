@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Character } from "dh-marvel/interfaces/characterTypes";
 import CharacterCard from "../characterCard/characterCard";
-import styles from "./CharactersGrid.module.css"
+import styles from "./characterGrid.module.css"
 
 interface Props {
   characters: Character[];

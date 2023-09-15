@@ -3,7 +3,7 @@ import { Comic } from "dh-marvel/interfaces/comicTypes";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import styles from "./ComicDetails.module.css";
+import styles from "./comicDetail.module.css";
 import Link from "next/link";
 import useOrderContext from "context/context";
 

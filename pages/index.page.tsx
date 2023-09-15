@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import BodySingle from "dh-marvel/components/layouts/body/single/body-single";
 import { Comic } from "dh-marvel/interfaces/comicTypes"
 import { getComics } from "dh-marvel/services/marvel/marvel.service";
-import LayoutGeneral from 'dh-marvel/components/layouts/layout-general';
 import ComicPagination from 'dh-marvel/components/pagination/pagination';
 import ComicGrid from 'dh-marvel/components/comicGrid/comicGrid';
 
@@ -29,7 +28,7 @@ const Index: NextPage<Props> = ({ comics, total }) => {
     }, [page]);
 
     return (
-        <LayoutGeneral>
+        <>
             <Head>
                 <title>DH Marvel</title>
                 <meta
@@ -52,7 +51,7 @@ const Index: NextPage<Props> = ({ comics, total }) => {
                     setPage={handleChange}
                 />
             </BodySingle>
-        </LayoutGeneral>
+        </>
     );
 };
 
