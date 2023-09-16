@@ -35,12 +35,12 @@ const Payment = ({ prevStep }: Props) => {
   const router = useRouter();
 
   const onSubmit = async (paymentInfo: PaymentInfo) => {
-    // setOrder((prevOrder) => {
-    //   return { ...prevOrder, buyer: { ...prevOrder.buyer, paymentInfo } };
-    // });
-    setOrder((prevOrder: { buyer: any; }) => {
+    setOrder((prevOrder) => {
       return { ...prevOrder, buyer: { ...prevOrder.buyer, paymentInfo } };
     });
+    // setOrder((prevOrder: { buyer: any; }) => {
+    //   return { ...prevOrder, buyer: { ...prevOrder.buyer, paymentInfo } };
+    // });
 
     const newOrder: Order = {...order}
     newOrder.buyer = {

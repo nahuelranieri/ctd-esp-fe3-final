@@ -37,7 +37,7 @@ const PersonalData = ({ nextStep }: Props) => {
   }, [buyer, setValue]);
 
   const onSubmit = (data: PersonalInfo) => {
-    setOrder((prevOrder: { buyer: any; }) => {
+    setOrder((prevOrder) => {
       return {
         ...prevOrder,
         buyer: { ...prevOrder.buyer, personalInfo: data },

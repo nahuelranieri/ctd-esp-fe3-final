@@ -40,18 +40,18 @@ const DeliveryInfo = ({ prevStep, nextStep }: Props) => {
   }, [buyer, setValue]);
 
   const onSubmit = (data: DeliveryInfo) => {
-    // setOrder((prevOrder) => {
-    //   return {
-    //     ...prevOrder,
-    //     buyer: { ...prevOrder.buyer, deliveryInfo: data },
-    //   };
-    // });
-    setOrder((prevOrder: { buyer: any; }) => {
+    setOrder((prevOrder) => {
       return {
         ...prevOrder,
         buyer: { ...prevOrder.buyer, deliveryInfo: data },
       };
     });
+    // setOrder((prevOrder: { buyer: any; }) => {
+    //   return {
+    //     ...prevOrder,
+    //     buyer: { ...prevOrder.buyer, deliveryInfo: data },
+    //   };
+    // });
 
     nextStep();
   };
