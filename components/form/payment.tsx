@@ -11,7 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "@mui/material/Button";
 import useOrderContext from "context/context";
 import { Error, Order, PaymentInfo } from "dh-marvel/interfaces/checkoutTypes";
-import { postOrder } from "dh-marvel/services/checkout/postOrder";
+import { postOrder } from "dh-marvel/services/checkout/order";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useRouter } from "next/router";
@@ -35,7 +35,10 @@ const Payment = ({ prevStep }: Props) => {
   const router = useRouter();
 
   const onSubmit = async (paymentInfo: PaymentInfo) => {
-    setOrder((prevOrder) => {
+    // setOrder((prevOrder) => {
+    //   return { ...prevOrder, buyer: { ...prevOrder.buyer, paymentInfo } };
+    // });
+    setOrder((prevOrder: { buyer: any; }) => {
       return { ...prevOrder, buyer: { ...prevOrder.buyer, paymentInfo } };
     });
 
@@ -45,7 +48,7 @@ const Payment = ({ prevStep }: Props) => {
       paymentInfo: paymentInfo
     }
 
-    // const response = await postOrder({ order: newOrder });
+    const response = await postOrder({ order: newOrder });
     const data = await response?.json();
     
 
