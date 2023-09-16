@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Cards from "react-credit-cards-2";
 import { useForm } from "react-hook-form";
-import { FormInputText } from "./Inputs/FormInputText";
+import { FormInputText } from "./input";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { paymentSchema as schema } from "./rules";
+import { paymentSchema as schema } from "./verification";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "@mui/material/Button";
 import useOrderContext from "context/context";
-import { Error, Order, PaymentInfo } from "dh-marvel/interface/types";
+import { Error, Order, PaymentInfo } from "dh-marvel/interfaces/checkoutTypes";
 import { postOrder } from "dh-marvel/services/checkout/postOrder";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
@@ -45,7 +45,7 @@ const Payment = ({ prevStep }: Props) => {
       paymentInfo: paymentInfo
     }
 
-    const response = await postOrder({ order: newOrder });
+    // const response = await postOrder({ order: newOrder });
     const data = await response?.json();
     
 

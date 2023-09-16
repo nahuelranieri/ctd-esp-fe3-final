@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { FormInputText } from "./Inputs/FormInputText";
 import { useForm } from "react-hook-form";
-import Typography from "@mui/material/Typography";
-import { deliveryInfoSchema as schema } from "./rules";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { FormInputText } from "./input";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { DeliveryInfo } from "dh-marvel/interface/types";
+import Typography from "@mui/material/Typography";
+import { deliveryInfoSchema as schema } from "./verification";
+import { DeliveryInfo } from "dh-marvel/interfaces/checkoutTypes";
 import useOrderContext from "context/context";
 
 interface Props {

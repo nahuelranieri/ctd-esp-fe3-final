@@ -1,10 +1,10 @@
 import React from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
-import {getCharacter,getCharacters,} from "dh-marvel/services/marvel/marvel.service";
+import Head from "next/head";
+import {getCharacter, getCharacters} from "dh-marvel/services/marvel/marvel.service";
 import { Character } from "dh-marvel/interfaces/characterTypes";
 import CharacterDetail from "dh-marvel/components/characterDetail/characterDetail";
 import LayoutGeneral from "dh-marvel/components/layouts/layout-general";
-import Head from "next/head";
 
 interface Props {
   character: Character;

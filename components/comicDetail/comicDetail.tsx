@@ -16,7 +16,7 @@ const ComicDetails = ({ comic }: Props) => {
   const { setOrder } = useOrderContext();
 
   const handlePurchase = () => {
-    setOrder((prevOrder) => {
+    setOrder((prevOrder: any) => {
       return { ...prevOrder, comic };
     });
   };

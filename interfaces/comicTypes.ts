@@ -66,3 +66,5 @@ export type Comic = {
     oldPrice: number;
     stock: number;
   };
+
+  
