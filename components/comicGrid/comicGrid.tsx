@@ -27,10 +27,26 @@ const ComicGrid = ({ comics }: Props) => {
   };
 
   const handlePurchase = async (idComic: number) => {
-    
+    const response = await fetch(`/api/compra-rapida/?id=${idComic}`);
+
+    const comic = await response.json();
+    const { stock } = comic as Comic;
+
+    if (stock === 0) {
+      handleClick(idComic)
+      return
+    };
+
+    setOrder((prevOrder) => {
+      return { ...prevOrder, comic };
+    });
 
     router.push(`/checkout/`);
   };
+  // const handlePurchase = ()=> { 
+  //   router.push(`/checkout/`)
+  // }
+
 
   return (
     <Grid
@@ -66,6 +82,7 @@ const ComicGrid = ({ comics }: Props) => {
                 size="small"
                 variant="contained"
                 onClick={() => handlePurchase(comic.id)}
+                // onClick={() => handlePurchase()}
               >
                 Comprar
               </Button>
