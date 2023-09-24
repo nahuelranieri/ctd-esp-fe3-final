@@ -1,4 +1,4 @@
-import { OrderContextType } from "dh-marvel/interfaces/contextTypes";
+import { OrderContextType } from "dh-marvel/interfaces/types";
 import {
   useState,
   createContext,

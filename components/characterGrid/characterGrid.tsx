@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Character } from "dh-marvel/interfaces/characterTypes";
+import { Character } from "dh-marvel/interfaces/types";
 import CharacterCard from "../characterCard/characterCard";
 import styles from "./characterGrid.module.css"
 

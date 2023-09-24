@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormInputText } from "./input";
+import { FormInputText } from "./input/input";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { deliveryInfoSchema as schema } from "./verification";
-import { DeliveryInfo } from "dh-marvel/interfaces/checkoutTypes";
+import { deliveryInfoSchema as schema } from "./rules/verification";
+import { DeliveryInfo } from "dh-marvel/interfaces/types";
 import useOrderContext from "context/context";
 
 interface Props {
@@ -46,12 +46,6 @@ const DeliveryInfo = ({ prevStep, nextStep }: Props) => {
         buyer: { ...prevOrder.buyer, deliveryInfo: data },
       };
     });
-    // setOrder((prevOrder: { buyer: any; }) => {
-    //   return {
-    //     ...prevOrder,
-    //     buyer: { ...prevOrder.buyer, deliveryInfo: data },
-    //   };
-    // });
 
     nextStep();
   };

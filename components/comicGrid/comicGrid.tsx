@@ -11,7 +11,7 @@ import {
 import { useRouter } from "next/router";
 import ComicCard from "../comicCard/comicCard";
 import styles from "./comicGrid.module.css";
-import { Comic } from "dh-marvel/interfaces/comicTypes";
+import { Comic } from "dh-marvel/interfaces/types";
 import useOrderContext from "context/context";
 
 interface Props {
@@ -31,7 +31,8 @@ const ComicGrid = ({ comics }: Props) => {
 
     const comic = await response.json();
     const { stock } = comic as Comic;
-
+    
+    
     if (stock === 0) {
       handleClick(idComic)
       return
@@ -41,12 +42,8 @@ const ComicGrid = ({ comics }: Props) => {
       return { ...prevOrder, comic };
     });
 
-    router.push(`/checkout/`);
+    router.push("/checkout");
   };
-  // const handlePurchase = ()=> { 
-  //   router.push(`/checkout/`)
-  // }
-
 
   return (
     <Grid
@@ -82,7 +79,6 @@ const ComicGrid = ({ comics }: Props) => {
                 size="small"
                 variant="contained"
                 onClick={() => handlePurchase(comic.id)}
-                // onClick={() => handlePurchase()}
               >
                 Comprar
               </Button>

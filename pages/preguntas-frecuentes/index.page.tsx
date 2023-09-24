@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Container } from '@mui/material';
 import { faqsData} from 'dh-marvel/components/faqs/faqsData';
-import { FaqsType } from 'dh-marvel/interfaces/faqsTypes';
+import { FaqsType } from 'dh-marvel/interfaces/types';
 // import LayoutGeneral from 'dh-marvel/components/layouts/layout-general';
 
 

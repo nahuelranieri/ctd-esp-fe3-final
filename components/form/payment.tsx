@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Cards from "react-credit-cards-2";
 import { useForm } from "react-hook-form";
-import { FormInputText } from "./input";
+import { FormInputText } from "./input/input";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { paymentSchema as schema } from "./verification";
+import { paymentSchema as schema } from "./rules/verification";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "@mui/material/Button";
 import useOrderContext from "context/context";
-import { Error, Order, PaymentInfo } from "dh-marvel/interfaces/checkoutTypes";
-import { postOrder } from "dh-marvel/services/checkout/order";
+import { Error, Order, PaymentInfo } from "dh-marvel/interfaces/types";
+import { postOrder } from "dh-marvel/services/checkout/postOrder";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useRouter } from "next/router";
@@ -27,6 +27,8 @@ const Payment = ({ prevStep }: Props) => {
 
   type DataForm = yup.InferType<typeof schema>;
 
+  
+
   const { control, handleSubmit, getValues, watch } = useForm<DataForm>({
     resolver: yupResolver(schema),
     defaultValues: {},
@@ -38,9 +40,6 @@ const Payment = ({ prevStep }: Props) => {
     setOrder((prevOrder) => {
       return { ...prevOrder, buyer: { ...prevOrder.buyer, paymentInfo } };
     });
-    // setOrder((prevOrder: { buyer: any; }) => {
-    //   return { ...prevOrder, buyer: { ...prevOrder.buyer, paymentInfo } };
-    // });
 
     const newOrder: Order = {...order}
     newOrder.buyer = {
@@ -77,6 +76,7 @@ const Payment = ({ prevStep }: Props) => {
           expiry={getValues("expiry") || ""}
           cvc={getValues("cvc") || ""}
         />
+        
       </Box>
 
       <form onSubmit={handleSubmit(onSubmit)}>

@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import useOrderContext from "context/context";
-import CheckoutForm from "dh-marvel/components/form/formComponent";
+import CheckoutForm from "dh-marvel/components/form/CheckoutForm";
 import ComicCard from "dh-marvel/components/comicCard/comicCard";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
@@ -73,3 +73,4 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
+

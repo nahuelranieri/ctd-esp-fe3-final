@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import {getCharacter, getCharacters} from "dh-marvel/services/marvel/marvel.service";
-import { Character } from "dh-marvel/interfaces/characterTypes";
+import { Character } from "dh-marvel/interfaces/types";
 import CharacterDetail from "dh-marvel/components/characterDetail/characterDetail";
 import LayoutGeneral from "dh-marvel/components/layouts/layout-general";
 
