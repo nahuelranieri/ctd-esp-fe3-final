@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import ComicCard from "dh-marvel/components/comicCard/comicCard";
-import styles from "./OrderConfirmed.module.css";
+import styles from "./order.module.css";
 import { Buyer } from "dh-marvel/interfaces/types";
 import { Comic } from "dh-marvel/interfaces/types"
 
