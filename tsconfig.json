@@ -40,6 +40,9 @@
       ],
       "dh-marvel/interfaces/*": [
         "interfaces/*"
+      ],
+      "dh-marvel/context/*": [
+        "context/*"
       ]
     }
   },

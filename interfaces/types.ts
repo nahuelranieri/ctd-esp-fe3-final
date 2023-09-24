@@ -163,7 +163,6 @@ export type PaymentInfo = {
   cvc: string;
 };
 
-// prev: features/checkout.types.ts
 export type CheckoutInput = {
   customer: {
     name: string;

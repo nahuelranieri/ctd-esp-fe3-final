@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import ComicCard from "../comicCard/comicCard";
 import styles from "./comicGrid.module.css";
 import { Comic } from "dh-marvel/interfaces/types";
-import useOrderContext from "context/context";
+import useOrderContext from "dh-marvel/context/context";
 
 interface Props {
   comics: Comic[];
