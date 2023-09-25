@@ -8,7 +8,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Container } from '@mui/material';
 import { faqsData} from 'dh-marvel/components/faqs/faqsData';
 import { FaqsType } from 'dh-marvel/interfaces/types';
-// import LayoutGeneral from 'dh-marvel/components/layouts/layout-general';
+import LayoutGeneral from 'dh-marvel/components/layouts/layout-general';
 
 
 interface Props {
@@ -17,8 +17,9 @@ interface Props {
 
 const Faqs: NextPage<Props> = ({ faqs }) => {
     return (
-        
+        <LayoutGeneral>
             <Container>
+            <Typography variant="h4" my={4}>Preguntas Frecuentes</Typography>
                 {faqs.map(faq => {
                     return (
                         <Accordion key={faq.id}>
@@ -37,7 +38,8 @@ const Faqs: NextPage<Props> = ({ faqs }) => {
                         </Accordion>)
                 })}
             </Container>
-        
+        </LayoutGeneral>
+
     )
 };
 

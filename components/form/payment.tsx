@@ -27,8 +27,6 @@ const Payment = ({ prevStep }: Props) => {
 
   type DataForm = yup.InferType<typeof schema>;
 
-  
-
   const { control, handleSubmit, getValues, watch } = useForm<DataForm>({
     resolver: yupResolver(schema),
     defaultValues: {},
