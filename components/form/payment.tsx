@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { FormInputText } from "./input/input";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import { paymentSchema as schema } from "./rules/verification";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
